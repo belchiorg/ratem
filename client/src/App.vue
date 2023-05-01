@@ -1,33 +1,12 @@
+<script setup  lang="ts">
+import HomeView from './views/HomeView.vue';
+
+import ReviewComponent from './components/ReviewComponent.vue';
+
+</script>
+
 <template>
   <div>
-    <h1>Movie Reviews</h1>
-    <ul>
-      <li v-for="review in reviews" :key="review._id">
-        <p>{{ review.title }}</p>
-        <p>{{ review.author }}</p>
-        <p>{{ review.created }}</p>
-      </li>
-    </ul>
+    <HomeView />
   </div>
 </template>
-
-<script lang="ts">
-import API from './api/posts';
-
-export default {
-  data() {
-    return {
-      reviews: [],
-    };
-  },
-  mounted() {
-    API.fetchPosts()
-      .then((response) => {
-        this.reviews = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  },
-};
-</script>

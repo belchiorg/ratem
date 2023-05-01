@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { Post } from '../types/Post';
 
-const url = 'http://localhost:3000/api/posts';
+const url = import.meta.env.VITE_SERVER_URL+'/api/posts';
 
 const API = {
   fetchPosts: () => axios.get(url),
