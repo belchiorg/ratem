@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import API from '../api/posts';
 import ReviewComponent from '@/components/ReviewComponent.vue';
+import type { Post } from '@/types/Post';
 
 import { onMounted , ref } from 'vue';
 
-let reviews = ref([]);
+let reviews = ref<Post[]>([]);
+let err;
 
 onMounted(() => { 
   API.fetchPosts()
