@@ -31,4 +31,15 @@ onMounted(() => {
 
 <style scoped>
 
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+
 </style>
